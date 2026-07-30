@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Web Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard-grid">
+
+    <!-- Widget: Greeting -->
+    <section class="widget widget-greeting" aria-label="Salam dan Waktu">
+      <div id="greeting" class="greeting-text"></div>
+      <div id="clock" class="clock-display"></div>
+      <div id="date" class="date-display"></div>
+    </section>
+
+    <!-- Widget: Focus Timer -->
+    <section class="widget widget-timer" aria-label="Focus Timer">
+      <h2 class="widget-heading">Focus Timer</h2>
+      <div id="timer-display" class="timer-display" aria-live="polite">25:00</div>
+      <div class="timer-controls">
+        <button id="btn-start" type="button">Start</button>
+        <button id="btn-stop" type="button" disabled>Stop</button>
+        <button id="btn-reset" type="button">Reset</button>
+      </div>
+      <div id="timer-notification" class="timer-notification" role="status" hidden></div>
+    </section>
+
+    <!-- Widget: To-Do List -->
+    <section class="widget widget-todo" aria-label="Daftar Tugas">
+      <h2 class="widget-heading">Daftar Tugas</h2>
+      <div class="todo-input-row">
+        <label for="todo-input" class="sr-only">Tambah tugas baru</label>
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Tugas baru..."
+          aria-label="Tambah tugas baru"
+        />
+        <button id="btn-add-todo" type="button">Tambah</button>
+      </div>
+      <ul id="todo-list" class="todo-list" aria-label="Daftar tugas"></ul>
+    </section>
+
+    <!-- Widget: Quick Links -->
+    <section class="widget widget-links" aria-label="Quick Links">
+      <h2 class="widget-heading">Quick Links</h2>
+      <div class="links-form">
+        <div class="form-field">
+          <label for="link-label">Label</label>
+          <input
+            type="text"
+            id="link-label"
+            placeholder="Nama tautan..."
+            aria-label="Label tautan"
+          />
+          <span id="error-label" class="field-error" role="alert" hidden></span>
+        </div>
+        <div class="form-field">
+          <label for="link-url">URL</label>
+          <input
+            type="url"
+            id="link-url"
+            placeholder="https://..."
+            aria-label="URL tautan"
+          />
+          <span id="error-url" class="field-error" role="alert" hidden></span>
+        </div>
+        <button id="btn-save-link" type="button">Simpan</button>
+      </div>
+      <ul id="links-list" class="links-list" aria-label="Daftar quick links"></ul>
+    </section>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
